@@ -1,0 +1,57 @@
+/* Component-level enhancements for home page */
+
+.left h1 span:last-child{
+  background: linear-gradient(90deg, #a5b4fc, #22d3ee 60%, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cta{ display:flex; gap:.8rem; align-items:center; }
+
+.hero .btn.primary{
+  position: relative;
+}
+.hero .btn.primary::after{
+  content:"";
+  position:absolute; inset:0; border-radius:10px; pointer-events:none;
+  box-shadow: 0 0 0 0 rgba(59,130,246,.5);
+  transition: box-shadow .2s ease;
+}
+.hero .btn.primary:hover::after{
+  box-shadow: 0 0 0 6px rgba(59,130,246,.18);
+}
+
+/* Slight elevation for cards in hero and grids */
+.card{
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: #2b3a66;
+}
+/* Contact page layout helpers */
+.field { display: grid; gap: .4rem; }
+.label { color: var(--muted); font-size: .9rem; }
+
+.form.card { gap: .9rem; }
+.actions { display: flex; align-items: center; }
+
+input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-color: var(--ring);
+}
+
+input, textarea {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 10px;
+  padding: .7rem .8rem;
+  transition: border-color .12s ease, box-shadow .12s ease;
+}
+
+.card h3 { font-size: 1.05rem; }
+
